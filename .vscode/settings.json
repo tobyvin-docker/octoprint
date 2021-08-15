@@ -1,9 +1,4 @@
 {
-    "files.associations": {
-        "**/nginx/*-confs*/*": "NGINX"
-    },
-    "files.autoSave": "off",
-    // "docker.networks.showBuiltInNetworks": false,
     "docker.containers.label": "ContainerName",
     "docker.containers.description": [
         "Status"

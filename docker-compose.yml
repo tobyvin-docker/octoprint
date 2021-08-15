@@ -10,19 +10,16 @@ services:
       - /dev/ttyUSB0:/dev/ttyUSB0
       - /dev/video0:/dev/video0
     volumes:
-      - ./data:/octoprint
-    ports:
-      - 8282:80
+      - data:/octoprint
     restart: unless-stopped
     labels:
       - traefik.enable=true
       - traefik.http.routers.octoprint.entrypoints=websecure
-    deploy:
-      placement:
-        constraints:
-          - node.labels.devices.cr10s == true
-      
+
 networks:
   default:
-    external:
-      name: proxy
+    name: proxy
+    external: true
+
+volumes:
+  data:
